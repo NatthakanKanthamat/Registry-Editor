@@ -1,0 +1,26 @@
+คู่มือการแก้ปัญหา Photoshop Crash (Memory Management)
+อาการ: เปิดโปรแกรมแล้วเด้งออกทันที หรือขึ้นแจ้งเตือน "Could not complete your request because there is not enough memory (RAM)."
+
+ขั้นตอนการแก้ไข (Step-by-Step):
+
+เปิดเครื่องมือ: กดปุ่ม Windows + R พิมพ์ regedit แล้วกด Enter
+
+ไปที่ตำแหน่งไฟล์: ค้นหาโฟลเดอร์ตาม Path นี้:
+
+HKEY_CURRENT_USER\Software\Adobe\Photoshop\(หมายเลขเวอร์ชัน เช่น 120.0 หรือ 140.0)
+
+สร้างค่าใหม่: * คลิกขวาที่พื้นที่ว่างด้านขวา เลือก New > DWORD (32-bit) Value
+
+ตั้งชื่อว่า OverridePhysicalMemoryMB
+
+กำหนดค่า RAM:
+
+ดับเบิลคลิกที่ไฟล์ที่สร้างขึ้น เลือก Base เป็น Decimal
+
+ใส่ค่าตามขนาด RAM ของเครื่องคุณ (หน่วยเป็น MB) เช่น:
+
+RAM 8GB = 8192
+
+RAM 16GB = 16384 
+
+เสร็จสิ้น: กด OK แล้ว Restart โปรแกรม Photoshop
